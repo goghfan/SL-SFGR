@@ -1,0 +1,75 @@
+{
+    "name": "DiffuseMorph_3D",
+    "phase": "train",
+    "gpu_ids": [
+        0
+    ],
+    "display_port": 8097,
+    "path": {
+        "log": "logs",
+        "tb_logger": "tb_logger",
+        "results": "results",
+        "checkpoint": "checkpoint",
+        "resume_state": "/home/vrdoc/GF/lung_registration/experiments/reg_seg_alll/checkpoint/I182600_E200" //the deirectory of trained models
+    },
+    "datasets": {
+        "centered": true,
+        "train": {
+            "name": "3D",
+            "dataroot": "data/",
+            "batch_size": 1,
+            "num_workers": 0,
+            "use_shuffle": true
+        }
+    },
+    "model": {
+        "netDim": 3,
+        "which_model_G": "ddpm",
+        "finetune_norm": false,
+        "unet": {
+            "in_channel": 3,
+            "out_channel": 1,
+            "inner_channel": 4,
+            "channel_multiplier": [
+                1,
+                2,
+                4,
+                8,
+                16
+            ],
+            "attn_res": [
+                160
+            ],
+            "res_blocks": 1,
+            "dropout": 0 //.2
+        },
+        "beta_schedule": {
+            "train": {
+                "schedule": "linear",
+                "n_timestep": 2000,
+                "linear_start": 1e-6,
+                "linear_end": 1e-2
+            }
+        },
+        "diffusion": {
+            "image_size": [160,192,192],
+            "conditional": true
+        },
+        "field": {
+            "in_channel": 2,
+            "encoder_nc": [8,32,32,32,32],
+            "decoder_nc": [32,32,32,8,8,3]
+        },
+        "loss_lambda": 10
+    },
+    "train": {
+        "n_epoch": 300,
+        "val_freq": 10,
+        "save_checkpoint_epoch": 20,
+        "print_freq": 10,
+        "optimizer": {
+            "type": "adam",
+            "lr": 1e-4
+        }
+    }
+}

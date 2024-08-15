@@ -1,0 +1,10 @@
+/home/vrdoc/GF/lung_registration/data/maskeddata/Fixed/C8T00_lungmask.nii.gz
+/home/vrdoc/GF/lung_registration/data/maskeddata/Fixed/C6T00_lungmask.nii.gz
+/home/vrdoc/GF/lung_registration/data/maskeddata/Fixed/C4T00_lungmask.nii.gz
+/home/vrdoc/GF/lung_registration/data/maskeddata/Fixed/C1T00_lungmask.nii.gz
+/home/vrdoc/GF/lung_registration/data/maskeddata/Fixed/C3T00_lungmask.nii.gz
+/home/vrdoc/GF/lung_registration/data/maskeddata/Fixed/C2T00_lungmask.nii.gz
+/home/vrdoc/GF/lung_registration/data/maskeddata/Fixed/C9T00_lungmask.nii.gz
+/home/vrdoc/GF/lung_registration/data/maskeddata/Fixed/C7T00_lungmask.nii.gz
+/home/vrdoc/GF/lung_registration/data/maskeddata/Fixed/C5T00_lungmask.nii.gz
+/home/vrdoc/GF/lung_registration/data/maskeddata/Fixed/C10T00_lungmask.nii.gz
